@@ -1,4 +1,4 @@
-# École 42
+ École 42
 
 ## Piscine C
 
