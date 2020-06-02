@@ -1,17 +1,13 @@
-calloc() распределяет память для массива размером nmemb, каждый элемент которого равен size байтов, и возвращает указатель на распределенную память. Память при этом "очищается".
-malloc() распределяет size байтов и возвращает указатель на распределенную память. Память при этом не "очищается".
-
-
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*result;
+	void	*new_count;
 
-	result = NULL;								занулили указатель
-	result = malloc(count * size);
-	if (result == NULL)
-		return (NULL);							NULL, если запрос памяти завершился некорректно.
-	ft_bzero(result, count * size);				выделяет память и заполняет область памяти нулями
-	return (result);							возвращаемые значения являются указателем на память, которая должным образом распределена для каждого типа переменных
+	new_count = NULL;
+	new_count = malloc(count * size);
+	if (new_count == NULL)
+		return (NULL);
+	ft_bzero(new_count, count * size);
+	return (new_count);
 }

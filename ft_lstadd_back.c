@@ -1,5 +1,3 @@
-Добавляет новый элемент в список(Если список не пустой) в его
-
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
@@ -16,6 +14,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last->next = new;
 	}
 }
-не надо свдигать указатель на большой первый элемент
-
-добавиить вконец

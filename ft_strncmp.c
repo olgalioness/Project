@@ -1,28 +1,19 @@
-работает аналогично ft_strcmp(сравнивает строки s1 и s2 и возвращает разность кодов символов первого несовпадения. Вернёт 0, если строки одинаковы.), но не сравнивает более n символов.
-
 #include "libft.h"
-сравнивает две строки , в лексикографеском символе (сравнение по  ascii )
+
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t index;
 
-	if (n == 0)						
+	if (n == 0)
 		return (0);
 	index = 0;
-	while (s1[index] == s2[index] && index < n)					не доконца строки а до заданного значения size_t
+	while (s1[index] == s2[index] && index < n)
 	{
-		if (s1[index] == '\0')								пока s1[index] дойдет доконца \0  вернем ноль  = строки равны
+		if (s1[index] == '\0')
 			return (0);
 		index++;
 		if (index == n)
-			return (0);										исчерпали size количество символов по которому сравнивали
+			return (0);
 	}
-	return ((unsigned char)s1[index] - (unsigned char)s2[index]);			 если строки не равны вывалиться разница между строк
+	return ((unsigned char)s1[index] - (unsigned char)s2[index]);
 }
-
-0123   0123456	
-мама   мамочка						size 3.  функция вернет 0
-									size 4+ =  вернет разницу между аски кодами символов 
-
-
-

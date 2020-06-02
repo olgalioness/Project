@@ -1,27 +1,19 @@
- копирует n байт из src в dst. Если в процессе копирования встретится (unsigned char)c байт запись прекратится. Возвращает NULL, если не был встречен c байт, иначе - возвращает указатель на байт в пространстве dst расположенный после скопированного с байта.
-нужно сделать проверку, если на вход будет src = NULL или dest = NULL;
-if (!dst && !src)
-return (0);
- оригинальная функция сегается если первый параметр 0, если второй параметр 0 и если компилить через gcc не сегается если оба параметры нули, но если компилить через clang (через который и компилит мулинет) - сегается и когда оба нули
-
- оригинальная функция (если не ошибаюсь) при dest==NULL src ==NULL size != 0 возвращает dst (т.е NULL) и не фолдится (
-hellohello     11 g  копирует все до момента g
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)    сашаолятоля      			о     10
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char		*destination;
+	char		*dest;
 	const char	*source;
 
-	destination = dst;
+	dest = dst;
 	source = src;
-	while (n > 0)								пока не больше  n символов
+	while (n > 0)
 	{
-		*destination = *source;					копирует в dest  -  sourse до ограничителя
-		if (*destination == (char)c)			 пока не встретит (преобразование    инт в чар) требуется один символ
-			return (destination + 1);				[0]   [1] скопируем все пока не встртим с, и его тоже скопируем , после завершим чтобы не затереь с мы сдвигаем указатель на 1
-		destination++;						 	  // указатель не на ограничителе а на продолжении
-		source++;									сдвигаем на 1 в майне
+		*dest = *source;
+		if (*dest == (char)c)
+			return (dest + 1);
+		dest++;
+		source++;
 		n--;
 	}
 	return (NULL);

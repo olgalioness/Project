@@ -1,10 +1,9 @@
-
 #include "libft.h"
 
 int		ft_lstsize(t_list *lst)
 {
 	int		result;
-	t_list	*current;		не обязателен (мы можем двигать сам лист потому что там копия ссылка и ничего с ней не случится)
+	t_list	*current;
 
 	if (lst == NULL)
 		return (0);
@@ -17,6 +16,3 @@ int		ft_lstsize(t_list *lst)
 	}
 	return (result);
 }
-
-
-пробежаться по всем и посчитать длинну
