@@ -1,0 +1,5 @@
+Credentials cache: API:452D5BCB-341E-45EC-9B88-0810C90FA6AB
+        Principal: sreina@21-SCHOOL.RU
+
+  Issued                Expires               Principal
+Feb 25 12:11:31 2020  Feb 26 12:11:31 2020  krbtgt/21-SCHOOL.RU@21-SCHOOL.RU
