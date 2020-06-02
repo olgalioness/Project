@@ -3,18 +3,20 @@
 
 #include <unistd.h>
 
+void	ft_print_numbers(void)
+{
+	char	number;
+
+	number = '0';
+	while (number <= '9')
+	{
+		write(1, &number, 1);
+		number++;
+	}
+}
+
 int main()
 {
-    int i;
-    char z;
-
-    i = 0;
-    while (i <= 9)
-    {
-        z = i + '0';
-        write(1, &z, 1);
-        i++;
-    }
-    write(1, "\n", 1);
+    ft_print_numbers();
     return (0);
 }

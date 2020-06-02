@@ -2,11 +2,6 @@
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
-
 void    ft_reverse_print_alphabet(void)
 {
     char    let;
@@ -14,7 +9,7 @@ void    ft_reverse_print_alphabet(void)
     let = 'z';
     while (let >= 'a')
     {
-        ft_putchar(let);
+		write(1, &let, 1);
         let--;
     }
 }
